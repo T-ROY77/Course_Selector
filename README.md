@@ -1,1 +1,1 @@
-# CS156_Course_Selectot
+# CS156_Course_Selector
