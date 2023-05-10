@@ -5,6 +5,7 @@ class Student:
         self.GPA = GPA
         self.availability = availability
         self.prevCourses = prevCourses
+        self.courseList = []
 
     def getName(self):
         return self.name

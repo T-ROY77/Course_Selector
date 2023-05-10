@@ -12,10 +12,10 @@ class Course:
     def getCourseNumber(self):
         return self.courseNumber
 
-    def gettime(self):
+    def getTime(self):
         return self.time
 
-    def getrequiredGPA(self):
+    def getRequiredGPA(self):
         return self.requiredGPA
 
     def getCourseName(self):
