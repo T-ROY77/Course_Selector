@@ -19,25 +19,22 @@ class Course:
             print("%s" %x.getCourseName())
         print("----------")
 
+
+    def __str__(self):
+        return self.getCourseName()
+
 # Creating an array of course objects
 course_array = [
-    Course("46A", "CS",  "M", [9-10.15], 3.0),
-    Course("46B", "CS", "T", [11-12.15], 2.8),
-    Course("47", "CS", "T", [13-14.15], 3.5),
-    Course("146","CS",  "F",[17.3-18.45],  3.0),
-    Course("147","CS",  "M", [16-17.15], 2.5),
-    Course("149","CS",  "T",[14.3-15.45],  3.0),
-    Course("151","CS",  "F",[12-13.15],2.8),
-    Course("152", "CS", "M", [17-18.15], 3.5),
-    Course("154","CS",  "M",[14-15.15],  2.5),
-    Course("157A","CS",  "T",[13.3-14.45],  3.0),
-    Course("160","CS",  "F", [15-16.15], 2.8),
-    Course("166","CS",  "M",[13-14.15],  3.0)
+    Course("46A", "CS",  "M", [9,10.15], 3.0),
+    Course("46B", "CS", "T", [11,12.15], 2.8),
+    Course("47", "CS", "T", [13,14.15], 3.5),
+    Course("146","CS",  "T",[17.3,18.45],  3.0),
+    Course("147","CS",  "M", [16,17.15], 2.5),
+    Course("149","CS",  "T",[14.3,15.45],  3.0),
+    Course("151","CS",  "T",[12,13.15],2.8),
+    Course("152", "CS", "M", [17,18.15], 3.5),
+    Course("154","CS",  "M",[14,15.15],  2.5),
+    Course("157A","CS",  "T",[13.3,14.45],  3.0),
+    Course("160","CS",  "T", [15,16.15], 2.8),
+    Course("166","CS",  "M",[13,14.15],  3.0)
 ]
-
-
-# Accessing the attributes of course objects
-for course in course_array:
-    print(f"Course Name: {course.number}")
-    print(f"GPA Requirement: {course.requiredGPA}")
-    print()  # Empty print statement for spacing

@@ -20,16 +20,14 @@ class Student:
             print("CS%s" % x)
         print("-------------------------")
 
+    def showCourseList(self):
+        for x in self.courseList:
+            print(str(x))
 
+    def showSchedule(self):
+        print("-------------------------")
+        print("   Mon/Wed      Tues/Thurs")
+        print("    %s - %s         %s - %s" % (
+        self.availability[0][0], self.availability[0][1], self.availability[1][0], self.availability[1][1]))
+        print("-------------------------")
 
-
-# print("Please enter the following information:")
-# print("----------------------------------------")
-# name = input("  Name: ")
-# age = input("  Age: ")
-# major = input("  Major: ")
-# gpa = input("  GPA: ")
-# school_year = input("  School Year: ")
-# availability = input("  Availability: ")
-# prevCourses = input(" previous courses: ")
-# courseList = input("Course list: ")

@@ -18,7 +18,7 @@ from logic import *
 # student = Student(name, major, gpa, availability, prevCourses)
 
 
-student = Student("John", "CS", 2.5, [[1-23], [1-23], [1-23]], [])
+student = Student("John", "CS", 4.0, [[1,23], [1,23]], [])
 
 courseList = course_array
 
@@ -30,10 +30,11 @@ print(student.GPA)
 newCourseList = removePrevCourses(courseList, student.prevCourses)
 
 # printing InputList_1 after removing the same or common elements
-print("potentialCourseList after removing same elements:", newCourseList)
+print("CourseList after removing same elements:", newCourseList)
 
 makeSchedule(newCourseList, student)
 
-print(student.courseList)
+student.showCourseList()
+student.showSchedule()
 
 
