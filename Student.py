@@ -22,7 +22,7 @@ class Student:
 
     def showCourseList(self):
         for x in self.courseList:
-            print(str(x))
+            print(str(x) + " " + x.getCourseTime())
 
     def showSchedule(self):
         print("-------------------------")

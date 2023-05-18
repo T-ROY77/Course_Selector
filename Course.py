@@ -10,6 +10,9 @@ class Course:
     def getCourseName(self):
         return "%s%s" % (self.major, self.number)
 
+    def getCourseTime(self):
+        return "%s - %s" % (self.time[0], self.time[1])
+
     def showCourseInfo(self):
         self.getCourseName()
         print("%s - %s" %(self.time[0], self.time[1]))
