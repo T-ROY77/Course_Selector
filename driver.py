@@ -2,7 +2,23 @@ from Student import *
 from Course import *
 
 
-John = Student("John", "CS", 3.2, [[8, 2], [10, 4]], ["46A", "46B", "47"])
+#John = Student("John", "CS", 3.2, [[8, 2], [10, 4]], ["46A", "46B", "47"])
+
+
+print("Please enter the following information:")
+print("----------------------------------------")
+name = input("  Name: ")
+age = input("  Age: ")
+major = input("  Major: ")
+gpa = input("  GPA: ")
+school_year = input("  School Year: ")
+availability = input("  Availability: ")
+prevCourses = input(" previous courses: ")
+courseList = input("Course list: ")
+
+John = Student(name, major, gpa, availability, prevCourses)
+
+
 
 introToProg = Course("46A", "CS", [10.30, 11.45], 2.5, [])
 introToProg3 = Course("46C", "CS", [10.30, 11.45], 2.5, [introToProg])
