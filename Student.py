@@ -6,22 +6,6 @@ class Student:
         self.availability = availability
         self.prevCourses = prevCourses
         self.courseList = []
-#
-
-    def getName(self):
-        return self.name
-
-    def getMajor(self):
-        return self.major
-
-    def getGPA(self):
-        return self.GPA
-
-    def getAvailability(self):
-        return self.availability
-
-    def getprevCourses(self):
-        return self.prevCourses
 
     def showAvailablitySchedule(self):
         print("-------------------------")

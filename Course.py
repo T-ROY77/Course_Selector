@@ -1,13 +1,14 @@
 class Course:
-    def __init__(self, number, major, time, requiredGPA, prereqs=[]):
+    def __init__(self, number, major, day, time, requiredGPA, prereqs=[]):
         self.number = number
+        self.day = day
         self.requiredGPA = requiredGPA
         self.time = time
         self.major = major
         self.prereqs = prereqs
 
     def getCourseName(self):
-        return "%s%s" % (self.major, self.courseNumber)
+        return "%s%s" % (self.major, self.number)
 
     def showCourseInfo(self):
         self.getCourseName()
@@ -20,25 +21,23 @@ class Course:
 
 # Creating an array of course objects
 course_array = [
-    Course("CS-46A", "M/W", "9:00 AM", "10:15 AM", 3.0),
-    Course("CS-46B", "Tu/Th", "11:00 AM", "12:15 PM", 2.8),
-    Course("CS-47", "Tu/Th", "1:00 PM", "2:15 PM", 3.5),
-    Course("CS-146", "Fri", "5:30 PM", "6:45 PM", 3.0),
-    Course("CS-147", "M/W", "4:00 PM", "5:15 PM", 2.5),
-    Course("CS-149", "Tu/Th", "2:30 PM", "3:45 PM", 3.0),
-    Course("CS-151", "Fri", "12:00 PM", "1:15 PM", 2.8),
-    Course("CS-152", "M/W", "5:00 PM", "6:15 PM", 3.5),
-    Course("CS-154", "M/W", "2:00 PM", "3:15 PM", 2.5),
-    Course("CS-157A", "Tu/Th", "1:30 PM", "2:45 PM", 3.0),
-    Course("CS-160", "Fri", "3:00 PM", "4:15 PM", 2.8),
-    Course("CS-166", "M/W", "1:00 PM", "2:15 PM", 3.0)
+    Course("46A", "CS",  "M", [9-10.15], 3.0),
+    Course("46B", "CS", "T", [11-12.15], 2.8),
+    Course("47", "CS", "T", [13-14.15], 3.5),
+    Course("146","CS",  "F",[17.3-18.45],  3.0),
+    Course("147","CS",  "M", [16-17.15], 2.5),
+    Course("149","CS",  "T",[14.3-15.45],  3.0),
+    Course("151","CS",  "F",[12-13.15],2.8),
+    Course("152", "CS", "M", [17-18.15], 3.5),
+    Course("154","CS",  "M",[14-15.15],  2.5),
+    Course("157A","CS",  "T",[13.3-14.45],  3.0),
+    Course("160","CS",  "F", [15-16.15], 2.8),
+    Course("166","CS",  "M",[13-14.15],  3.0)
 ]
 
 
 # Accessing the attributes of course objects
 for course in course_array:
     print(f"Course Name: {course.number}")
-    print(f"Start Time: {course.start_time}")
-    print(f"End Time: {course.end_time}")
-    print(f"GPA Requirement: {course.gpa_requirement}")
+    print(f"GPA Requirement: {course.requiredGPA}")
     print()  # Empty print statement for spacing
