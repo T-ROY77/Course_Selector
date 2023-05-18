@@ -6,6 +6,30 @@ from logic import *
 def timeSort(val):
     return val.time[0]
 
+#function to check user input of GPA
+def uiNumber():
+    while True:
+        try:
+            gpa = float(input("  GPA: "))
+            return gpa
+        except ValueError:
+            print("Please enter a number")
+
+#function to check user input of availability
+def uiAvailability():
+    while True:
+        user_input = input(" (Enter 2 numbers space separated in military time): ")
+        numbers = user_input.split()
+
+        if len(numbers) == 2:
+            try:
+                number1 = float(numbers[0])
+                number2 = float(numbers[1])
+                return [number1, number2]
+            except ValueError:
+                print("Invalid input. Please enter two numbers separated by a space.")
+        else:
+            print("Invalid input. Please enter two numbers separated by a space.")
 
 
 # user input
@@ -16,20 +40,16 @@ print("Please enter the following information:")
 print("----------------------------------------")
 name = input("  Name: ")
 major = input("  Abbreviated Major: ")
-gpa = input("  GPA: ")
+gpa = uiNumber()
 print("  Availability on Monday and Wednesday")
-availabilityMW = input(" (Enter 2 numbers space separated in military time): ")
+availabilityMW = uiAvailability()
 print("  Availability on Tuesday and Thursday")
-availabilityTT = input(" (Enter 2 numbers space separated in military time): ")
+availabilityTT = uiAvailability()
 print(" Courses Previously Passed")
 prevCourses = input(" (Enter course names as a comma separated list): ")
 
 #transfer user input
-MW = availabilityMW.split()
-TT = availabilityTT.split()
-availability = [TT, MW]
-availability[0] = [float(i) for i in availability[0]]
-availability[1] = [float(i) for i in availability[1]]
+availability = [availabilityMW, availabilityTT]
 
 student = Student(name, major, float(gpa), availability, prevCourses)
 
