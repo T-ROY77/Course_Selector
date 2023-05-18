@@ -33,28 +33,26 @@ def uiAvailability():
 
 
 # user input
-
-print("Welcome to the Student Schedule Builder")
-print()
-print("Please enter the following information:")
-print("----------------------------------------")
-name = input("  Name: ")
-major = input("  Abbreviated Major: ")
-gpa = uiNumber()
-print("  Availability on Monday and Wednesday")
-availabilityMW = uiAvailability()
-print("  Availability on Tuesday and Thursday")
-availabilityTT = uiAvailability()
-print(" Courses Previously Passed")
-prevCourses = input(" (Enter course names as a comma separated list): ")
-
-#transfer user input
-availability = [availabilityMW, availabilityTT]
-
-student = Student(name, major, float(gpa), availability, prevCourses)
+#
+# print("Welcome to the Student Schedule Builder")
+# print()
+# print("Please enter the following information:")
+# print("----------------------------------------")
+# name = input("  Name: ")
+# major = input("  Abbreviated Major: ")
+# gpa = uiNumber()
+# print("  Availability on Monday and Wednesday")
+# availabilityMW = uiAvailability()
+# print("  Availability on Tuesday and Thursday")
+# availabilityTT = uiAvailability()
+# availability = [availabilityMW, availabilityTT]
+# print(" Courses Previously Passed")
+# prevCourses = input(" (Enter course names as a comma separated list): ")
+#
+# student = Student(name, major, float(gpa), availability, prevCourses)
 
 #hardcoded student
-# student = Student("John", "CS", 4.0, [[1,23], [1,23]], ["CS160"])
+student = Student("John", "BIOL ", 4.0, [[1,23], [1,23]], ["CS160"])
 
 # list of courses
 courseList = course_array
