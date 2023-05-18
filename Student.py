@@ -26,8 +26,20 @@ class Student:
 
     def showSchedule(self):
         print("-------------------------")
-        print("   Mon/Wed      Tues/Thurs")
-        print("    %s - %s         %s - %s" % (
-        self.availability[0][0], self.availability[0][1], self.availability[1][0], self.availability[1][1]))
+        #print monday wednesday schedule
+        print("       Mon/Wed ")
+        for x in self.courseList:
+            if x.day == "M":
+                print("%s     %s - %s" % (
+                    str(x), x.time[0],  x.time[1]))
+
+        print()
+
+        #print tuesday thursday schedule
+        print("       Tues/Thurs ")
+        for x in self.courseList:
+            if x.day == "T":
+                print("%s     %s - %s" % (
+                    str(x), x.time[0], x.time[1]))
         print("-------------------------")
 

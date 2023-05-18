@@ -2,6 +2,11 @@ from Student import *
 from Course import *
 from logic import *
 
+#function to sort the course list by starting time
+def timeSort(val):
+    return val.time[0]
+
+
 #John = Student("John", "CS", 3.2, [[8, 2], [10, 4]], ["46A", "46B", "47"])
 
 
@@ -21,6 +26,7 @@ from logic import *
 student = Student("John", "CS", 4.0, [[1,23], [1,23]], [])
 
 courseList = course_array
+courseList.sort(key=timeSort)
 
 print(student.name)
 print(student.GPA)
