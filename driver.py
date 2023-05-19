@@ -52,18 +52,16 @@ prevCourses = input(" (Enter course names as a comma separated list): ")
 student = Student(name, major, float(gpa), availability, prevCourses)
 
 #hardcoded student
-#student = Student("John", "BIOL", 4.0, [[1,23], [1,23]], ["CS160"])
+#student = Student("John", "BIOL", 4.0, [[8,20], [7,18]], ["BIOL30", "BIOL54"])
 
 # list of courses
 courseList = course_array
 courseList.sort(key=timeSort)
 
 print(student.name)
-print(student.GPA)
 print("Availability Schedule")
 student.showAvailablitySchedule()
 print()
-#student.showTranscript()
 
 newCourseList = removePrevCourses(courseList, student.prevCourses)
 makeSchedule(newCourseList, student)
