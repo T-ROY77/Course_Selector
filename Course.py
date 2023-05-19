@@ -1,32 +1,39 @@
+from Student import *
+from Course import *
+from Logic import *
+
+
+#course class
+#
+#represents a university course
+#has a course number
+#has an associated major
+#has a field representing the days the course is offered
+#course can be offered either Monday and Wednesday or Tuesday and Thursday
+#has a time course takes place
+#has a GPA requirement
+
 class Course:
-    def __init__(self, number, major, day, time, requiredGPA, prereqs=[]):
+    def __init__(self, number, major, day, time, requiredGPA):
         self.number = number
         self.day = day
         self.requiredGPA = requiredGPA
         self.time = time
         self.major = major
-        self.prereqs = prereqs
 
-    def getCourseName(self):
-        return "%s%s" % (self.major, self.number)
-
-    def getCourseTime(self):
-        return "%s - %s" % (self.time[0], self.time[1])
-
-    def showCourseInfo(self):
-        self.getCourseName()
-        print("%s - %s" %(self.time[0], self.time[1]))
-        print("GPA requirement: %s" %self.requiredGPA)
-        print("Prerequisites: ")
-        for x in self.prereqs:
-            print("%s" %x.getCourseName())
-        print("----------")
-
-
+    # function to print the name of the course
     def __str__(self):
         return self.getCourseName()
 
-# Creating an array of course objects
+    # function to return the course name as the major and course number
+    def getCourseName(self):
+        return "%s%s" % (self.major, self.number)
+
+    #function to return course time as a string
+    def getCourseTime(self):
+        return "%s - %s" % (self.time[0], self.time[1])
+
+# Database of courses
 course_array = [
     Course("46A", "CS",  "M", [9,10.15], 3.0),
     Course("46B", "CS", "T", [11,12.15], 2.8),

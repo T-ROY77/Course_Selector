@@ -1,6 +1,16 @@
 from Student import *
 from Course import *
 
+#Logic class
+#
+#contains the algorithm used to calculate the schedule
+#also contains helper function to compare student's previously passed courses with the database
+
+#function removePrevCourses
+#
+#compares the 2 entered lists of courses
+#removes courses that are present in both list from the first list
+#returns the updated courselist
 def removePrevCourses(courseList, prevCourseList):
     # traversing course list 1([:] is used to create copy)
     for element in courseList[:]:
@@ -10,7 +20,13 @@ def removePrevCourses(courseList, prevCourseList):
           courseList.remove(element)
        return courseList
 
-
+#function makeSchedule
+#
+#calculates the schedule from the course list and the student parameters
+#loops through the database of courses
+#compares the course information with the student information
+#if all information passes its rule, the course is added to the student's course list
+#a total of 6 courses can be added to the student's course list
 def makeSchedule(courseList, student):
     dayIndex = -1
     for x in courseList:

@@ -1,6 +1,9 @@
 from Student import *
 from Course import *
-from logic import *
+from Logic import *
+
+#utility functions
+#
 
 #function to sort the course list by starting time
 def timeSort(val):
@@ -31,6 +34,8 @@ def uiAvailability():
         else:
             print("Invalid input. Please enter two numbers separated by a space.")
 
+#--------------------------------------------------------------------------------------
+#MAIN
 
 # user input
 
@@ -57,15 +62,18 @@ student = Student(name, major, float(gpa), availability, prevCourses)
 # list of courses
 courseList = course_array
 courseList.sort(key=timeSort)
+newCourseList = removePrevCourses(courseList, student.prevCourses)
 
+#print availability schedule
 print(student.name)
 print("Availability Schedule")
-student.showAvailablitySchedule()
+student.showAvailabilitySchedule()
 print()
 
-newCourseList = removePrevCourses(courseList, student.prevCourses)
+#calculate the schedule for the student using the algorithm
 makeSchedule(newCourseList, student)
 
+#print the output of the algorithm
 print()
 print("List of courses:")
 student.showCourseList()
