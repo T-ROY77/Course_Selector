@@ -52,7 +52,7 @@ def uiAvailability():
 # student = Student(name, major, float(gpa), availability, prevCourses)
 
 #hardcoded student
-student = Student("John", "BIOL ", 4.0, [[1,23], [1,23]], ["CS160"])
+student = Student("John", "BIOL", 4.0, [[1,23], [1,23]], ["CS160"])
 
 # list of courses
 courseList = course_array
